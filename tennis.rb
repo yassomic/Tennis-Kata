@@ -2,9 +2,9 @@ module Tennis
   class Game
     attr_accessor :player1, :player2
 
-    def initialize
-      @player1 = Player.new
-      @player2 = Player.new
+    def initialize(player1 = Player.new, player2 = Player.new)
+      @player1 = player1
+      @player2 = player2
 
       @player1.opponent = @player2
       @player2.opponent = @player1
@@ -24,7 +24,7 @@ module Tennis
   class Player
     attr_accessor :points, :opponent
 
-    def initialize
+    def initialize(name)
       @points = 0
     end
 
