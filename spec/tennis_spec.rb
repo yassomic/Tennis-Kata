@@ -25,6 +25,39 @@ describe Tennis::Game do
       expect(game.player1.points).to eq(game.player1)
     end
   end
+
+  describe '#duece' do
+    it 'when players are tied with at least 3 points' do
+      game.duece
+
+      game.player1.points = 3
+      game.player2.points = 3
+
+      expect(game.duece).to eq("duece")
+    end
+  end
+
+  describe '#advantage' do
+    it 'when players are at 3 points at least, and one goes up by 1' do
+      game.advantage
+
+      game.player1.points = 4
+      game.player2.points = 3
+
+      expect(game.advantage).to eq("advantage, player 1")
+    end
+  end
+
+    describe '#win_game' do
+    it 'declares the winner of the game' do
+      game.win_game
+
+      game.player1.points = 4
+      game.player2.points = 2
+
+      expect(game.win_game).to eq("player1 wins")
+    end
+  end
 end
 
 describe Tennis::Player do

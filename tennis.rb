@@ -20,6 +20,36 @@ module Tennis
       # TODO: Think it's gross to pass an integer instead of a player object?
       # Then reimplement this method!
     end
+
+    def duece
+      if @player1.points >= 3 && @player1.points = @player2.points
+        return "duece"
+      elsif @player2.points >= 3 && @player2.points = @player1.points
+        return "duece"
+      else
+        return "there is no duece"
+      end
+    end
+
+    def advantage
+      if @player1.points >= 4 && @player1.points - 1 === @player2.points
+        return "advantage, player 1"
+      elsif @player2.points >= 4 && @player2.points - 1 === @player1.points
+        return "advantage, player 2"
+      else
+        return "there is no advantage"
+      end
+    end
+
+    def win_game
+      if @player1.points >= 4 && @player1.points - 2 >= @player2.points
+         return "player1 wins"
+      elsif @player2.points >= 4 && @player2.points - 2 >= @player1.points
+         return "player2 wins"
+      else
+        return "Noone has won the game yet."
+      end
+    end
   end
 
   class Player
