@@ -21,6 +21,7 @@ module Tennis
       # Then reimplement this method!
     end
 
+    # Returns when players are tied with at least 3 points
     def duece
       if @player1.points >= 3 && @player1.points = @player2.points
         return "duece"
@@ -31,6 +32,7 @@ module Tennis
       end
     end
 
+    # Returns when players are at 3 points at least, and one goes up by 1
     def advantage
       if @player1.points >= 4 && @player1.points - 1 === @player2.points
         return "advantage, player 1"
@@ -41,6 +43,7 @@ module Tennis
       end
     end
 
+    # Returns when someone wins the game
     def win_game
       if @player1.points >= 4 && @player1.points - 2 >= @player2.points
          return "player1 wins"
